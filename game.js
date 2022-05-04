@@ -7,9 +7,10 @@ let arr = [];
 console.log(box,displayBox,arr);
 
 
-// let winPopUp = document.getElementById("winPop")
-// let closePopUp = document.querySelector(".close");
-// let ok = document.getElementById("ok")
+let winModal = document.getElementById("Modal-Win")
+let closeModal = document.querySelector(".close");
+let done = document.getElementById("ok");
+
 
 
 puzzle();
@@ -42,7 +43,6 @@ function createBox(n) {
     boxId = 'box' + displayBox;
     selectBox = document.getElementById(boxId);
     selectBox.classList.add('currentBox');
-
 }
 
 // Shuffle the number randomly
@@ -59,7 +59,6 @@ function shuffle() {
 
             if (x == 0) {
                 pos = displayBox + 1;
-
             }
             else if (x == 1) {
                 pos = displayBox - 1;
@@ -72,18 +71,18 @@ function shuffle() {
             }
 
             swap(pos);
-            if (i >= max - 1) {
+            if (i >= max-1) {
                 shuffling = true;
             }
 
 
-        }, i*10)
+        },i*10)
     }
 }
 
 // Swaping boxex on click add add remove class
 function swap(clicked) {
-    if (clicked < 1 || clicked > (box)) {
+    if (clicked < 1 || clicked > box) {
         return;
     }
     //check for right
@@ -108,28 +107,32 @@ function swap(clicked) {
     }
 
     // For winning message 
-    // if (shuffling) {
-    //     if (won()) {
-    //         winPopUp.animate({
-    //             'display': 'block',
-                
-    //         }, 500)
-    //         if (winPopUp.style.display = "block") {
-    //             closePopUp.addEventListener('click', function () {
-    //                 winPopUp.style.display = "none"
-    //             })
-    //         }
-    //         ok.addEventListener('click', function () {
-    //             return shuffle()
-    //         })
+    if (shuffling) {
+        if (won()) {
+        //     winPopUp.animate({
+        //         'display': 'block',    
+        //     }, 500)
+        //     if (winPopUp.style.display = "block") {
+        //         closePopUp.addEventListener('click', function () {
+        //             winPopUp.style.display = "none"
+        //         })
+        //     }
+        //     ok.addEventListener('click', function () {
+        //         return shuffle()
+        //     })
+        console.log("you win");
+        alert("Congratulation You Win the game");
+        shuffle()
 
-    //     }
-    //     else {
-    //         winPopUp.style.display = "none"
-    //     }
+        }
+        else {
+            // winPopUp.style.display = "none";
+            console.log("try");
+
+        }
 
         
-    // }
+    }
 
 }
 
