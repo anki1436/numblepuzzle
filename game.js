@@ -7,9 +7,9 @@ let arr = [];
 console.log(box,displayBox,arr);
 
 
-let winModal = document.getElementById("Modal-Win")
-let closeModal = document.querySelector(".close");
-let done = document.getElementById("ok");
+// let winModal = document.getElementById("Modal-Win")
+// let closeModal = document.querySelector(".close");
+// let done = document.getElementById("ok");
 
 
 
