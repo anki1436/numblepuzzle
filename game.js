@@ -7,9 +7,7 @@ let arr = [];
 console.log(box,displayBox,arr);
 
 
-// let winModal = document.getElementById("Modal-Win")
-// let closeModal = document.querySelector(".close");
-// let done = document.getElementById("ok");
+
 
 
 
@@ -22,6 +20,11 @@ function puzzle() {
     setTimeout(() => {
         shuffle();
     }, 200)
+}
+function start() {
+    console.log("hwllo");
+    gameContainer.style.display = "flex";
+
 }
 
 // Create boxex with dom
@@ -38,7 +41,6 @@ function createBox(n) {
             swap(Number(this.getAttribute('index')));
         });
         gameContainer.append(newBox);
-
     }
     boxId = 'box' + displayBox;
     selectBox = document.getElementById(boxId);
@@ -109,24 +111,13 @@ function swap(clicked) {
     // For winning message 
     if (shuffling) {
         if (won()) {
-        //     winPopUp.animate({
-        //         'display': 'block',    
-        //     }, 500)
-        //     if (winPopUp.style.display = "block") {
-        //         closePopUp.addEventListener('click', function () {
-        //             winPopUp.style.display = "none"
-        //         })
-        //     }
-        //     ok.addEventListener('click', function () {
-        //         return shuffle()
-        //     })
+        //
         console.log("you win");
         alert("Congratulation You Win the game");
         shuffle()
 
         }
         else {
-            // winPopUp.style.display = "none";
             console.log("try");
 
         }
